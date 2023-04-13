@@ -11,6 +11,7 @@ export const register = async (req, res) => {
       password,
       rolle,
     } = req.body;
+    console.log(fullName +" "+ username)
 
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
@@ -32,6 +33,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log(username +" "+ password)
     const user = await User.findOne({ username: username });
     if (!user) return res.status(400).json({ msg: "User does not exist. " });
 

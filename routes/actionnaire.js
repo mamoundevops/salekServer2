@@ -12,15 +12,15 @@ const router = express.Router();
 
 /* READ */
 router.get("/", verifyToken, getActionnaire);
-router.get("/:ActionnaireId", verifyToken, getActionnaireById);
+router.get("/getAct/:ActToGetId", verifyToken, getActionnaireById);
 
 /* UPDATE */
-router.put("/ActionnaireId", verifyToken, updateActionnaire);
+router.put("/updateAct", verifyToken, updateActionnaire);
 
 /* DELETE */
-router.delete("/:ActionnaireId", verifyToken, deleteActionnaire);
+router.delete("/delAct/:ActToDelId", verifyToken, deleteActionnaire);
 
 /* CREATE */
-router.post("/newactionnaire", verifyToken, createActionnaire);
+router.post("/newAct", verifyToken, createActionnaire);
 
 export default router;

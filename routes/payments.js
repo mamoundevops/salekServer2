@@ -12,13 +12,13 @@ const router = express.Router();
 
 /* READ */
 router.get("/", verifyToken, getPayment);
-router.get("/:paymentId", verifyToken, getPaymentById);
+router.get("/getPay/:paymentId", verifyToken, getPaymentById);
 
 /* UPDATE */
 router.put("/updatepayment", verifyToken, updatePayment);
 
 /* DELETE */
-router.delete("/:paymentId", verifyToken, deletePayment);
+router.delete("/delPay/:paymentId", verifyToken, deletePayment);
 
 /* CREATE */
 router.post("/newpayment", verifyToken, createPayment);

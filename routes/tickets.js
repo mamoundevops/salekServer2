@@ -14,7 +14,7 @@ const router = express.Router();
 
 /* READ */
 router.get("/", verifyToken, getTickets);
-router.get("/:ticketid", verifyToken, getTicketById);
+router.get("/getTick/:ticketid", verifyToken, getTicketById);
 
 // between tow date 
 // router.get("/ticketBetween", verifyToken, getTicketBetween);
@@ -22,13 +22,13 @@ router.get("/:ticketid", verifyToken, getTicketById);
 // ticket of a year
 
 //ticket by client id 
-router.get("/ticketbyclientid", verifyToken,  getTicketByClientId);
+router.get("/cliTick/:ticketbyclientid", verifyToken,  getTicketByClientId);
 
 /* UPDATE */
-router.put("/:ticketid", verifyToken, updateTicket);
+router.put("/updTick/:ticketid", verifyToken, updateTicket);
 
 /* DELETE */
-router.delete("/:ticketid", verifyToken, deleteTicket);
+router.delete("/delTick/:ticketid", verifyToken, deleteTicket);
 
 /* CREATE */
 router.post("/newticket", verifyToken, createTicket);
